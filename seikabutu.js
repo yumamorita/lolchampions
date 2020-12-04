@@ -222,7 +222,7 @@ displayButton.onclick = () => {
 championInput.onkeydown = event => {
     if (event.key === 'Enter') {
       // TODO ボタンのonclick() 処理を呼び出す
-      assessmentButton.onclick();
+      displayButton.onclick();
     }
 };
 
