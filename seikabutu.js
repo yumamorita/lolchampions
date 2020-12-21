@@ -166,6 +166,11 @@ function removeAllChildren(element) {
       element.removeChild(element.firstChild);
     }
 }
+function clearText() {
+	var textForm = document.getElementById("champion");
+  textForm.value = '';
+}
+
 displayButton.onclick = () => {
     
     const championjp = championInput.value;
@@ -217,12 +222,21 @@ displayButton.onclick = () => {
     anchor2.href = "https://jp.op.gg/champion/" + championen;
     anchor2.innerText = "https://jp.op.gg/champion/" + championen;
     resultDivided.appendChild(anchor2);
+    const paragraph4 = document.createElement('p');
+    paragraph4.innerText = 'probuild　:　世界のプロプレイヤーのプレイ履歴、ビルドを紹介するサイト';
+    resultDivided.appendChild(paragraph4);
+    const anchor3 = document.createElement('a');
+    anchor3.href = "https://www.probuilds.net/champions/details/" + championen;
+    anchor3.innerText = "https://www.probuilds.net/champions/details/" + championen;
+    resultDivided.appendChild(anchor3);
+    //TODO 入力欄を消去
+    clearText();
 };
 
 championInput.onkeydown = event => {
     if (event.key === 'Enter') {
       // TODO ボタンのonclick() 処理を呼び出す
-      displayButton.onclick();
+      assessmentButton.onclick();
     }
 };
 
